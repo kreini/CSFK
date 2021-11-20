@@ -1,0 +1,35 @@
+A sin() és sinf() függvények számítási idejének
+meghatározása. Az értékek [számítás-per-másodperc]
+alakban vannak. Minden mérést többször elvégeztem.
+
+Kiíratás nélkül: ha elvégzett egy számítást, akkor
+egyetlen, a számítástól független konstans karak-
+tert írattam ki időbéllyegzővel.
+
+Kiíratás 2 tizedesjegyig:	%.2f
+
+Kiíratás auto. jegyig:		%f
+
+
+_____________________________________________________
+FLOAT
+
+sin()
+	- kiíratás nélkül:		~11500	c/s
+	- kiíratással 2 tizedesig:	~1400	c/s
+	- kiíatással auto. jegyig:	~780	c/s
+	
+sinf()
+	- kiíratás nélkül:		~11500	c/s
+	- kiíratással 2 tizedesig:	~600	c/s
+	- kiíatással auto. jegyig:	~460	c/s
+	
+_____________________________________________________
+DOUBLE
+
+sin()
+	- kiíratás nélkül:		~11500	c/s
+	- kiíratással 2 tizedesig:	~1200	c/s
+	- kiíatással auto. jegyig:	~790	c/s
+	
+_____________________________________________________
