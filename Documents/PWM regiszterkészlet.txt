@@ -1,0 +1,50 @@
+_____________________________________________
+
+PWM regiszterek használata - Kreinicker Gábor
+_____________________________________________
+
+
+
+RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+	TIM2 aktiválása
+
+TIM2->PSC = 48-1;
+	a prescaler regiszter megadása
+
+TIM2->ARR = 1000-1;
+	a túlcsordulás regiszter megadása, ez adja meg a PWM jel periódusát
+	
+TIM2->CCR4 = 100;
+	a LOW állapotba való visszatérés tulcsordulás regisztere, ez határozza meg a kitöltés "hosszát"
+	
+TIM2->CCMR2 &= ~TIM_CCMR2_CC4S;
+	a TIM2CH4 csatornát kimeneti állapotba rakjuk
+	
+TIM2->CCER &= ~TIM_CCER_CC4P;
+	a kimenet állapotát HIGH-ra változtatjuk
+	
+TIM2->CCMR2 &= ~TIM_CCMR2_OC4M;
+TIM2->CCMR2 |= TIM_CCMR2_OC4M_1 | TIM_CCMR2_OC4M_2;
+	a kimenetet PWM 1 módra állítjuk
+	
+TIM2->CCMR2 |= TIM_CCMR2_OC4PE;
+	a preload regisztert aktiváljuk
+	
+TIM2->CCER |= TIM_CCER_CC4E;
+	a TIM2CH4 csatornát aktiváljuk
+	
+TIM2->EGR |= TIM_EGR_UG;
+	a regisztereket inicializáljuk
+	
+TIM2->BDTR |= TIM_BDTR_MOE;
+	a TIM2-t aktiváljuk
+	
+TIM2->CR1 |= TIM_CR1_CEN;
+	elkezdjük a számolást
+	
+_______________________________________________________________	
+
+A jel frekvenciájának meghatározása:
+
+	f =   __________f_CLK__________	itt osztunk!
+		(ARR + 1) * (PSC + 1)
