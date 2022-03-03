@@ -1,0 +1,32 @@
+Terminalba a kovetkezoket kell beirni egymas utan:
+
+sudo apt-get install gcc-arm-none-eabi
+sudo apt-get install binutils-arm-none-eabi
+sudo apt-get install libnewlib-arm-none-eabi
+sudo apt-get install libstdc++-arm-none-eabi-newlib
+sudo apt-get install build-essential
+sudo apt-get install srecord
+sudo apt-get install openocd
+________________________________________________________________________________________________
+
+Ezutan be kell masolni az include mappa tartalmat a makefile-okban szereplo root helyere:
+
+ARM=/usr/local/arm-none-eabi
+________________________________________________________________________________________________
+
+Illetve ellenorizni kell a konyvtarak helyet is:
+
+MAIN_LIBS += /usr/lib/arm-none-eabi/newlib/$(GCC_ARCH)/libm.a
+MAIN_LIBS += /usr/lib/arm-none-eabi/newlib/$(GCC_ARCH)/libc_nano.a 
+MAIN_LIBS += /usr/lib/gcc/arm-none-eabi/$(GCC_VERS)/$(GCC_ARCH)/libgcc.a 
+MAIN_LIBS += /usr/lib/arm-none-eabi/newlib/$(GCC_ARCH)/libnosys.a
+________________________________________________________________________________________________
+
+A programkod azon mappajaban, ahol a main.c nevu file van, meg kell nyitni egy terminalt, es a kovetkezoket beirni:
+
+sudo apt-get install make
+________________________________________________________________________________________________
+
+A serial mappajaban ugyanigy:
+
+sudo apt-get install cmake
