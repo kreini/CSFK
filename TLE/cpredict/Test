@@ -1,0 +1,90 @@
+Old TLE:
+
+# 1656934215.000
+doppler=-1680.68
+elevation=-36.3566
+azimuth=11.7778
+longitude=179.702
+latitude=52.7837
+altitude=538.481
+NORAD_ID        47959
+Name            0 GRBAlpha
+Date(epoch)     1656934215.000000
+Latitude(N)     52.783747
+Longitude(E)    179.702137
+Azimuth         11.777844
+Elevation       -36.356601
+Velocity        27379.526506
+Footprint       5066.847296
+Altitude(km)    538.481191
+Slant_Range(km) 8426.718946
+Eclipse_Depth   -8.608995
+Orbital_Phase   23.814267
+Orbital_Model   SGP4
+Visibility      D
+Sunlight        1
+Orbit_Number    6941
+Geostationary   0
+AOS_Happens     1
+Decayed         0
+Doppler         -1680.680553
+ECI_x           345.364889
+ECI_y           -4177.306384
+ECI_z           5484.848283
+ECI_vx          -1.150613
+ECI_vy          -6.026120
+ECI_vz          -4.494935
+ECI_sun_x       -32903533.483032
+ECI_sun_y       136242030.752799
+ECI_sun_z       59064517.229621
+ECI_obs_x       -1757.516481
+ECI_obs_y       3942.977565
+ECI_obs_z       4679.571474
+Beta_Angle(deg) -20.224697
+
+__________________________________________________________
+
+
+New TLE:
+
+# 1656934215.000
+doppler=-1680.68
+elevation=-36.3566
+azimuth=11.7778
+longitude=179.702
+latitude=52.7837
+altitude=538.481
+NORAD_ID        47959
+Name            0 GRBAlpha
+Date(epoch)     1656934215.000000
+Latitude(N)     52.783747
+Longitude(E)    179.702137
+Azimuth         11.777844
+Elevation       -36.356601
+Velocity        27379.526506
+Footprint       5066.847296
+Altitude(km)    538.481191
+Slant_Range(km) 8426.718946
+Eclipse_Depth   -8.608995
+Orbital_Phase   23.814267
+Orbital_Model   SGP4
+Visibility      D
+Sunlight        1
+Orbit_Number    6941
+Geostationary   0
+AOS_Happens     1
+Decayed         0
+Doppler         -1680.680553
+ECI_x           345.364889
+ECI_y           -4177.306384
+ECI_z           5484.848283
+ECI_vx          -1.150613
+ECI_vy          -6.026120
+ECI_vz          -4.494935
+ECI_sun_x       -32903533.483032
+ECI_sun_y       136242030.752799
+ECI_sun_z       59064517.229621
+ECI_obs_x       -1757.516481
+ECI_obs_y       3942.977565
+ECI_obs_z       4679.571474
+Beta_Angle(deg) -20.224697
