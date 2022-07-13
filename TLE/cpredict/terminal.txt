@@ -1,0 +1,84 @@
+______________________________________________________________________________________________
+
+to run *.sh files:
+
+    bash <filename>.sh
+    
+for example:
+
+    bash run.sh
+______________________________________________________________________________________________
+
+to run this code, type these lines in terminal:
+
+    ./cpredict
+______________________________________________________________________________________________
+
+to get the current date in sec>
+
+    date +%s
+______________________________________________________________________________________________
+
+to predict data by time:
+
+    ./cpredict -t <time in sec>
+
+for example:
+
+    ./cpredict -t 1649578934
+______________________________________________________________________________________________
+
+to predict data from .tle file:
+
+    ./cpredict -f <filename.tle>
+
+for example:
+
+    ./cpredict -t 1649578934 -f grbalpha.tle
+______________________________________________________________________________________________
+
+to get specifc data:
+
+	./cpredict -f <filename.tle> | grep ^<data>
+	
+for example:
+
+	./cpredict -f grbalpha.tle | grep ^ECI_x
+	
+if you would like to get more item from the same class using the previous example:
+
+	./cpredict -f grbalpha.tle | grep ^ECI_[xyz]
+______________________________________________________________________________________________
+
+to get only the value:
+
+	echo `./cpredict -f <filename.tle> | grep ^<data> | awk '{ print $<item_no>; }'`
+	
+for example:
+
+	echo `./cpredict -f grbalpha.tle | grep ^ECI_[xyz] | awk '{ print $2; }'`
+______________________________________________________________________________________________
+
+to get a lot of data shifted in time:
+
+	for t in `seq <time in sec start from> <resolution> <time in sec end>`; do echo $t `./cpredict -f <filename.tle> -t $t | grep ^<data> | awk '{ print $<item_no>; }'`; done
+	
+for example:
+
+	for t in `seq 1651753000 100 1651759000`; do echo $t `./cpredict -f grbalpha.tle -t $t | grep ^ECI_[xyz] | awk '{ print $2; }'`; done
+______________________________________________________________________________________________
+
+More informations:
+
+- the .tle file should be in the same folder
+  with the cpredict.c file
+- the .tle file should be in this format:
+
+    0 GRBAlpha
+    1 47959U 21022AD  22099.51448093  .00005809  00000+0  39120-3 0  9996
+    2 47959  97.5370   0.5325 0022383  26.4294  97.7235 15.06876939 56432
+    
+To download the latest TLE data:
+
+    https://celestrak.org/NORAD/elements/
+    -> Active satellites
