@@ -1,0 +1,27 @@
+- tle adatokból vektorok meghatározása, bezárt szög számítás, hasonlók
+- random kvaternió - SO(3) - RA-DEC-ROLL generátor
+- RA-DEC-ROLL vizualizáció
+- random adatok generálása, és plottolása, hogy megfelelő-e a generátor
+	ha SO(3) mátrixokat generálunk, és egy vektorral szorozzuk, akkor a vektorok egy gömböt kell homogén módon meghatározzanak
+- ha jó a random generátor, akkor mehet vele az orientációmeghatározós játék, ismert orientációval, azaz önellenőrzés
+
+
+
+TLE:
+	- műhold helyzete a Földhöz képest
+	- nap helyzete a Földhöz képest
+ -> 2db oszlopvektor + a bezárt szögük
+
+Mért:
+	- Föld helyzete a műholdhoz képest
+	- Nap helyzete a műholdhoz képest
+-> 2db oszlopvektor + a bezárt szögük
+
+TLE és mért vektorok szögei megközelítőleg megegyeznek
+
+Két vektor közül kijelölünk egyet főiránynak. Ekkor a koordinátarendszer egységvektorai meghatározhatók:
+	- jelöljük ki x-et, ismert még y, egységvektorok: i, j, k
+	- i = x
+	- z = i keresztszorozva y
+	- j = i keresztszorozva z
+	- k = i keresztszorozva j
