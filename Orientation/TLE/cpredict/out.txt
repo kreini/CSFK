@@ -1,0 +1,41 @@
+# 1651752759.063
+doppler=1195.57
+elevation=-51.7616
+azimuth=195.551
+longitude=351.147
+latitude=-56.97
+altitude=551.505
+NORAD_ID        47959
+Name            0 GRBAlpha
+Date(epoch)     1651752759.063365
+Latitude(N)     -56.970026
+Longitude(E)    351.146563
+Azimuth         195.550561
+Elevation       -51.761589
+Velocity        27335.540895
+Footprint       5123.695011
+Altitude(km)    551.504727
+Slant_Range(km) 10658.643004
+Eclipse_Depth   -39.728069
+Orbital_Phase   3.384563
+Orbital_Model   SGP4
+Visibility      D
+Sunlight        1
+Orbit_Number    6035
+Geostationary   0
+AOS_Happens     1
+Decayed         0
+Doppler         1195.571940
+ECI_x           2996.668399
+ECI_y           2312.843104
+ECI_z           -5786.455035
+ECI_vx          5.995672
+ECI_vy          2.328673
+ECI_vz          4.035588
+ECI_sun_x       106696278.770273
+ECI_sun_y       97877141.588981
+ECI_sun_z       42432143.441739
+ECI_obs_x       1789.205193
+ECI_obs_y       3928.699662
+ECI_obs_z       4679.571474
+Beta_Angle(deg) -17.924995
