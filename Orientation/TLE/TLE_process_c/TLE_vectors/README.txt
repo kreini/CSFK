@@ -1,1 +1,0 @@
-Nincs még kész, bocsi
