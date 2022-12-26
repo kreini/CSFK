@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int msleep(int millisec) {
+	usleep(millisec * 1000L);
+	return(0);
+}
+
+int main(int argc, char *argv[]) {
+	FILE *f
+
+	fw = popen("gnuplot", "w");
+	fprintf(fw, "set isosamples 50\n");
+	fprintf(fw, "set hidden3d\n");
+	fprintf(fw, "set xlabel 'x axis'\n");
+	fprintf(fw, "set ylabel 'y axis'\n");
+	fprintf(fw, "set zlabel 'z axis'\n");
+	fprintf(fw, "set title 'Testing gnuplot 3d plot'\n");
+	fprintf(fw, "set size ratio -1\n");
+
+	fprintf(fw, "splot [-8000:8000] [-8000:8000] [-8000:8000] 'data.txt' using 2:3:4 with lines\n");		fflush(fw);
+		c += 0.05;
+		msleep(100);
+	}
+
+	pclose(fw);
+	return(0);
+}
