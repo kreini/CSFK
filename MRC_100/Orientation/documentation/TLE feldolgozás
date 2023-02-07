@@ -1,0 +1,31 @@
+A műhold TLE adatait a norad [HIVATKOZÁS] oldaláról le tudjuk tölteni, amely alapján sok fontos
+paraméterhez férünk hozzá. Ami az orientáció meghatározása szempontjából a legfontosabb az a
+Föld-Nap és a Föld-műhold vektorok. Ezek a J2000 koordinátarendszerben vannak megadva.
+
+A J2000 egy Föld központú ortogonális koordinátarendszer, ahol az x-tengely a 2000. január 1. 
+UTC 12:00 órakor a Föld középpontját és a tavaszpontot összekötő szakasszal, illetve a
+z-tengely a Föld forgástengelyével esik egybe, az y-tengely pedig a jobbsodrásnak megfelelően
+adódik.
+
+A műholdnak is van egy saját koordináta rendszere, melyben meg tudjuk határozni a műhold-föld és
+műhold-Nap vektorokat az infra szenzorok adatainak feldolgozása után. Ez a rendszer is
+ortogonális, így ha ismerjük a forgatás mátrixot, amivel áttérhetünk egyik rendszerből a másikba,
+akkor a műhold orientációját is meg tudjuk határozni.
+[itt nekem van egy kis bizonytalanság]
+
+Ahhoz, hogy tesztelni tudjuk az adatfeldolgozó rendszerünket, ezt a forgatásmátrixot
+véletlenszerűen generáljuk, ezzel szimulálva a képfeldolgozásból kapott adatokat. Ez azonban nem
+egy triviális probléma, ugyanis a mátrix elemei összefüggéseknek megfelelően adódnak.
+
+Megoldást jelenthet a következő kifejezés, amelynek köszönhetően random kvaterniót tudunk
+generálni: (HIVATKOZÁS és ÖSSZEFÜGGÉS) Kvaternióból forgatásmátrixra pedig át tudunk térni a
+következő összefüggés segítségével: (HIVATKOZÁS és ÖSSZEFÜGGÉS)
+
+Ennek a generálásnak a megfelelő működését és homogén eloszlását tudjuk ellenőrizni a következő
+módszerrel: veszünk egy három dimenziós vektort, majd hattatjuk rá a random forgatás mátrixot.
+Ugyanezzel a vektorral megismételjük ezt a műveletet, minden alkalommal új mátrix generálásával.
+Akkor mondhatjuk, hogy a random forgatásmátrix generáló megfelelő, ha a vektorok által
+meghatározott pontfelhő egy gömbfelület, és ezeknek a pontok közel állandó távolságra vannak
+egymástól, mely a mi esetünkben jól láthatóan teljesül. (ÁBRA)
+
+
