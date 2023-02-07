@@ -1,0 +1,45 @@
+__________________________________________________________
+
+kommunikáció indítása:
+
+	vcom -a 15 -m -d /dev/ttyUSB0 -b 40000
+
+
+
+__________________________________________________________
+
+vcom cuccok
+__________________________________________________________
+
+kommunikáció ellenőrzés egyenként:
+
+	ping X
+	
+		ahol: X: {6, 7, 15} (6, 7: mikrovezérlők, 15: kommunikációs board)
+		pl:	ping 7
+	
+kommunikáció ellenőrzés folytonosan:
+	
+	bounce X - s Y
+	
+		ahol: X: {6, 7, 15}, Y: adat mérete
+		pl:	bounce 6 -s 200
+
+bootloader indítás
+
+	grb boot X
+	
+		ahol: X: 0..1 (0, 1: mikrovezérlők)
+		pl:	grb boot 0
+		
+i2c címek ellenőrzése
+		
+	grb i2c X
+		ahol: X: 0..1
+
+szenzorolvasás
+
+	grb mmio X rl:0x49200400:128
+		ahol: X: 0..1
+		pl:	grb mmio X rl:0x049200400:128
+__________________________________________________________
