@@ -9,17 +9,17 @@
 
 /* global variables */
 int a, b, c, d, e, f, g;
-char* prefix[] = {"CT", "DL", "EA", "EI", "ER", "ES", "EU", "EV", "EW", "F", "G", "HA", "HG", "HB", "HB0", "HV", "I", "IS", "LA", "LX", "LY", "UP", "LZ", "OE", "OH", "OK", "OM", "ON", "OZ", "PA", "S5", "SM", "SP", "SV", "T7", "T9", "TF", "TK", "UA1", "UR", "YL", "YO", "YU", "YT", "YZ", "Z3", "ZA", "ZB2", "3A", "9A", "9H"};
+char* prefix[] = {"CT", "DL", "EA", "EI", "ER", "ES", "EU", "EV", "EW", "F", "G", "HA", "HG", "HB", "HV", "I", "IS", "LA", "LX", "LY", "UP", "LZ", "OE", "OH", "OK", "OM", "ON", "OZ", "PA", "SM", "SP", "SV", "TF", "TK", "UR", "YL", "YO", "YU", "YT", "YZ", "ZA", "3A", "9A", "9H"};
 
-int number_of_generating = 10;	// the number of callsigns to be generated
-int mode = 2;				// 1 - only 3 characters long suffix callsigns
-					// 2 - only 3 characters long suffix hungarian callsigns
+int number_of_generating = 1;	// the number of callsigns to be generated
+int mode = 0;			// 1 - only 3 characters long suffix callsigns
+				// 2 - only 3 characters long suffix hungarian callsigns
 
 /* random generating parameter function */
 void rnd() {
 	a = rand()%3 + 2;	// the number of characters in suffix
 	b = rand()%10;		// the number in prefix
-	c = rand()%51;		// prefix
+	c = rand()%44;		// prefix
 	d = rand()%26 + 65;	// suffix (used later as chars - ascii)
 	e = rand()%26 + 65;
 	f = rand()%26 + 65;
@@ -49,7 +49,24 @@ char* tx() {
 
 /* main function */
 
-int main() {
+int main(int argc, char** argv) {
+
+	/* argument configuration */
+	if (argc == 1) {
+		printf("%s <mode> <number of callsigns>\n", argv[0]);
+		printf("modes:\n\t0 - mixed\n\t1 - mixed with 3 long suffix\n\t2 - hungarian prefix with 3 long suffix\n");
+		printf("example:\n\t%s 0 10\t - 10 mixed callsigns will be generated\n", argv[0]);
+		return 0;
+	}
+	if (argc > 1)
+		mode = atoi(argv[1]);
+	if (mode < 0)
+		mode = 0;
+	if (mode > 2)
+		mode = 2;
+	if (argc > 2)
+		number_of_generating = atoi(argv[2]);
+	
 
 	/* init random */
 	time_t t = time(0);
